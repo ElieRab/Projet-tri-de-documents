@@ -61,11 +61,10 @@ re
 
 📁 Structure du projet
 Projet-tri-documents/
-│
-├── Projet tri documents git.ipynb      # Notebook principal
-├── data/                                # Dossier avec vos documents à trier
-├── CV/                                  # Dossier de sortie pour les CV
-└── Annonces/                            # Dossier de sortie pour les annonces
+- Projet tri documents git.ipynb      # Notebook principal
+- data/                                # Dossier avec vos documents à trier
+- CV/                                  # Dossier de sortie pour les CV
+- Annonces/                            # Dossier de sortie pour les annonces
 
 ▶️ Exécution
 
