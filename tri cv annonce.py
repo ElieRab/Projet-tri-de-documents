@@ -26,13 +26,13 @@ keywords_annonce = [
         "contrat", "recrutement"
     ]
 
-for i in range(len(data)):
+for i in data:
     
-    if data[i].suffix.lower() == ".docx":
-        texte="\n".join(p.text for p in Document(data[i]).paragraphs)
+    if i.suffix.lower() == ".docx":
+        texte="\n".join(p.text for p in Document(i.paragraphs)
     
-    if data[i].suffix.lower() == ".pdf":
-        with open(data[i], "rb") as f:
+    if i.suffix.lower() == ".pdf":
+        with open(i, "rb") as f:
             reader = PdfReader(f)
             texte = "\n".join(page.extract_text() or "" for page in reader.pages)
     
@@ -42,10 +42,11 @@ for i in range(len(data)):
     if score_cv > 1 or score_annonce > 1:
 
         if score_cv < score_annonce:
-            shutil.move(str(data[i]), str(dossier_annonce))
+            shutil.move(str(i), str(dossier_annonce))
         
         elif score_cv >= score_annonce:
-            shutil.move(str(data[i]), str(dossier_CV))
+            shutil.move(str(i), str(dossier_CV))
     
     else:
+
         continue
